@@ -59,7 +59,7 @@ Template mendefinisikan kode-kode HTML yang dituliskan pada component.
 Ada 2 cara untuk menuliskan template pada suatu komponen yakni internal template dan external template.
 
 ### Internal Template
-Penggunaan internal template sangat efektif jika kode HTML sedikit.
+Penggunaan internal template sangat efektif jika kode HTML sedikit. Keyword __template__ digunakan untuk mengimplementasikan internal template.
 
 ``` typescript
 @Component({
@@ -71,7 +71,7 @@ export class AppComponent{
 ```
 
 ### External Template
-Penggunaan external template sangat efektif jika kode HTML sangat banyak. Dengan demikian kode HTML akan dipisahkan dari kode TypeScript dan memiliki file .html tersendiri sehingga secara source menjadi lebih mudah dibaca dan dipahami. 
+Penggunaan external template sangat efektif jika kode HTML sangat banyak. Dengan demikian kode HTML akan dipisahkan dari kode TypeScript dan memiliki file .html tersendiri sehingga secara source menjadi lebih mudah dibaca dan dipahami. Keyword __templateUrl__ digunakan untuk mengimplementasikan external template.
 
 #### app.component.ts
 ``` typescript
@@ -88,4 +88,43 @@ export class AppComponent{
 <h1>Hello World !</h1>
 ```
 
+## Properti Style
+Style mendefinisikan implementasi CSS untuk suatu template. Ada 2 cara untuk mendefinisikan style yakni internal style dan external style.
 
+### Internal Style
+Penggunaan internal style sangat efektif jika CSS yang diimplementasikan sedikit. Keyword __styles__ digunakan untuk mengimplementasikan internal style.
+
+``` typescript
+@Component({
+  selector: 'app',
+  styles: [`
+    h1{
+      background-color: red;
+      color: white;
+    }
+  `]
+})
+export class AppComponent{
+}
+```
+
+### External Style
+Penggunaan external style sangat efektif jika CSS yang diimplementasikan sangat banyak. Dengan demikian kode CSS akan dipisahkan dari kode TypeScript dan memiliki file .css tersendiri sehingga secara source menjadi lebih mudah dibaca dan dipahami. Keyword __styleUrls__ digunakan untuk mengimplementasikan external style.
+
+#### app.component.ts
+``` typescript
+@Component({
+  selector: 'app',
+  styleUrls: ['app.component.css']
+})
+export class AppComponent{
+}
+```
+
+#### app.component.css
+``` css
+h1{
+  background-color: red;
+  color: white;
+}
+```
