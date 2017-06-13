@@ -1,8 +1,12 @@
 # Objective
 Hal-hal yang akan dipelajari:
+- Angular Architecture
 - Apa itu Single Page Application?
 - Apa itu Root Component?
 - Apa itu Root Module?
+
+# Angular Architecture
+![](https://scontent.fsub6-2.fna.fbcdn.net/v/t1.0-9/19105796_10212859307148078_4449576728535112151_n.jpg?_nc_eui2=v1%3AAeH-huepOG24B6VctSlNx3pR4SLDJ-rY4rXGRDtKxWI5e71CJCwpAgUQN0WWuVmdZfjZ1dTdYyix5clkqE5Oj08K_t7sJeEdPU9yUA6AXu9sRw&oh=64909fe56792a61f718e0be366b8d447&oe=599F3426)
 
 # Instruksi Projek
 - Akses https://github.com/angular-university/angular2-for-beginners-starter
