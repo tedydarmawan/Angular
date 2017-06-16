@@ -6,8 +6,8 @@ Directive adalah suatu perintah pada DOM (Document Object Model) HTML.
 
 Ada beberapa tipe directive pada Angular, yakni:
 1. Component, merupakan directive yang memiliki template. Ketika menempatkan suatu selector component pada suatu template sama halnya dengan memerintahkan Angular untuk menambahkan seluruh konten yang ada pada template suatu component.
-2. Structural Directive, mengubah layout DOM dengan menambah atau menghapus elemen DOM.
-3. Attribute Directive, mengubah tampilan suaut elemen, component atau directive lainnya.
+2. Structural Directive, mengubah layout DOM dengan menambah atau menghapus elemen DOM. Contoh structural directive yaitu ngIf dan ngFor.
+3. Attribute Directive, mengubah tampilan suatu elemen, component atau directive lainnya. Contoh attribute directive yaitu ngStyle dan ngClass.
 
 ### ngIf
 Directive ngIf digunakan untuk menampilkan atau menyembunyikan suatu template (kondisional). Untuk mendeklarasikan directive ngIf maka harus ditambahkan * didepan directivenya. * berarti bahwa ngIf merupakan structural directive yang dapat mengubah struktur dari template HTML dengan menambah, menghapus atau memodifikasi suatu struktur DOM HTML.
@@ -99,9 +99,25 @@ export class App{
 
 
 ### ngFor
+Directive ngFor digunakan untuk melakukan perulangan terhadap elemen HTML.
 
+``` typescript
+@Component({
+  selector: 'app',
+  template: `
+    <ul>
+      <li *ngFor="let item of items">{{item}}</li>
+    </ul>
+  `
+})
+export class App{
+  items = ['Data 1', 'Data 2', 'Data 3'];
+}
+```
 
 ## Custom Directive
+Selain built-in directive, pada Angular dapat juga dibuat directive sendiri atau custom directive.
+
 ``` html
 <p ubahHijau>Paragraf memiliki background warna hijau</p>
 ```
