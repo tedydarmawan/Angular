@@ -1,6 +1,86 @@
 # Service dan Dependency Injection
 Service dapat digunakan untuk membuat logic yang dapat digunakan secara berulang. Manfaat dari service misalnya sebagai central repository atau central business unit.
 
+## Service
+A class with a focused purpose.
+
+Used for features that:
+- Are independent from any particular component
+- Provide shared data or logic accross components
+- Encapsulate external interactions
+
+Dependency Injection
+A coding pattern in which a class receives the instances of objects it needs (called dependencies) from an external source rather than creating them itself.
+
+# Membuat Service
+- Create the service class
+- Define the metadata with a decorator
+- Import what we need
+
+__Contoh service__
+
+product.service.ts
+``` ts
+import { Injectable } from '@angular/core';
+import { IProduct } from './product';
+
+@Injectable()
+export class ProductService{
+    getProducts(): IProduct[]{
+        return [
+            {
+                "productId": 1,
+                "productName": "Product A"
+            },
+            {
+                "productId": 2,
+                "productName": "Product B"
+            }
+        ]
+    }
+}
+```
+
+# Registering the Service
+- Register a provider
+    - Code that can create or return a service
+    - Typically the service class itself
+- Define in component or Angular module metadata
+- Registered in component
+    - Injectable to component and its children
+- Registered in Angular module
+    - Injectable everywhere in the application
+
+app.component.ts
+``` ts
+import { ProductService } from './products/product.service';
+
+@Component({
+    selecter: 'pm-root',
+    template: `
+    <div>
+        <h1>{{pageTitle}}</h1>
+        <pm-products></pm-products>
+    </div>
+    `,
+    providers: [ProductService]
+})
+export class AppComponent{}
+```
+
+# Injecting the Service
+product-list.component.ts
+``` ts
+@Component({
+    selector: 'pm-products',
+    templateUrl: './product-list.component.html'
+})
+export class ProductListComponent{
+    constructor(private _productService: ProductService){
+    }
+}
+```
+
 # Membuat Logging Service
 
 Buat kelas logging service 
